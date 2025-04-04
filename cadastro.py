@@ -116,21 +116,4 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     # Enviara outra resposta
     pyautogui.click(741,273, duration = 1)
     time.sleep(2)
-
-
-
-
-
-
-# 
-# pyautogui.click(735,444, duration = 1)
-
-# 
-# pyautogui.press('tab', duration = 0.1)
-
-# 
-# pyautogui.press('tab', duration = 0.1)
-
-# 
-# pyautogui.press('tab', duration = 0.1)
-
+# ADICIONAR A REMOÇÃO DE TODOS OS DADOS DA PLANILHA DEPOIS DE FINALIZAR TODOS OS CADASTROS
