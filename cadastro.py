@@ -6,6 +6,12 @@ import pyperclip    # Biblioteca para identificar caractere especiais nos campos
 # Formulário para cadastro dos funcionários, simulando a utilização de um sistema
 # https://docs.google.com/forms/d/e/1FAIpQLSduehX0b4pdnbk1PBPxqWrynw4ADLntbk9uadJ-FMBPR3qPhg/viewform
 
+# Para que seja possível coletar a informação da posição do ponteiro do mouse siga o passo a passo
+# 1. Abrir o CMD
+# 2. Digite o comando python
+# 3. Digite o comando from mouseinfo import mouseInfo
+# 4. Digite o comando mouseInfo()
+
 # Declaração de abertura do documento e planilha correta do sistema
 planilha = openpyxl.load_workbook('Funcionarios.xlsx')
 pagina = planilha['Funcionarios']
