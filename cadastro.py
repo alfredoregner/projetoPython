@@ -7,8 +7,8 @@ import pyperclip
 # https://docs.google.com/forms/d/e/1FAIpQLSduehX0b4pdnbk1PBPxqWrynw4ADLntbk9uadJ-FMBPR3qPhg/viewform
 
 # Declaração de abertura do documento e planilha correta do sistema
-workbook = openpyxl.load_workbook('Funcionarios.xlsx')
-pagina = workbook['Funcionarios']
+planilha = openpyxl.load_workbook('Funcionarios.xlsx')
+pagina = planilha['Funcionarios']
 
 # Acessando a linha 2 da planilha escolhida, para que comece a navegar entre as células, coletando as informações preenchidas
 for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir da segunda linha da tabela (a primeira não é necessária nesse caso pois é o cabeçalho do arquivo)
@@ -92,7 +92,7 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
 
     # Cargo
     funcionario_cargo = linha[11].value
-    if funcionario_cargo == 'Gerente':         # Verifica o que está escrito na célular e compara com as condições para clicar na opção correta
+    if funcionario_cargo == 'Gerente':         # Verifica o que está escrito na célula e compara com as condições para clicar na opção correta
         pyautogui.click(697,463, duration = 1)
     elif funcionario_cargo == 'Supervisor':
         pyautogui.click(696,503, duration = 1)
@@ -116,4 +116,7 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     # Enviara outra resposta
     pyautogui.click(741,273, duration = 1)
     time.sleep(2)
-# ADICIONAR A REMOÇÃO DE TODOS OS DADOS DA PLANILHA DEPOIS DE FINALIZAR TODOS OS CADASTROS
+
+# Limpando a tabela após realizar todos os cadastros
+pagina.delete_rows(2, 100)  # Encontrar uma forma de automatizar a identificação da última linha da tabela, para que seja tudo deletado automaticamente a partir da primeira linha com dados na tabela (2), até a última linha com dados preenchidos
+planilha.save('Funcionarios.xlsx')
