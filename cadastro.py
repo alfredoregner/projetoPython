@@ -1,7 +1,7 @@
-import pyautogui
-import time
-import openpyxl
-import pyperclip
+import pyautogui    # Biblioteca para realizar as ações dos equipamentos de entrada de dados (mouse e teclado)
+import time         # Biblioteca para configurar tempos de espera para a aplicação
+import openpyxl     # Biblioteca para realizar ações com excel dentro do programa
+import pyperclip    # Biblioteca para identificar caractere especiais nos campos da planilha
 
 # Formulário para cadastro dos funcionários, simulando a utilização de um sistema
 # https://docs.google.com/forms/d/e/1FAIpQLSduehX0b4pdnbk1PBPxqWrynw4ADLntbk9uadJ-FMBPR3qPhg/viewform
@@ -15,7 +15,12 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     # Nome
     funcionario_nome = linha[0].value       # Acessa o campo selecionado de acordo com o índice ([0] é o primeiro campo da linha 2)
     pyperclip.copy(funcionario_nome)        # Copia a informação do campo selecionado, com a formatação original
-    pyautogui.click(735,444, duration = 1)  # Clica no local indicado pelas coordenadas
+
+    # Click com o pc do SENAI
+    pyautogui.click(770,431, duration = 1)
+    
+    # Clickcom o pc do trabalho
+    # pyautogui.click(735,444, duration = 1)  # Clica no local indicado pelas coordenadas
     pyautogui.hotkey('ctrl', 'v')           # Cola a informação copiada anteriormente, no local selecionado
     
     # CPF
@@ -44,7 +49,11 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     # CEP
     funcionario_cep = linha[4].value
     pyperclip.copy(funcionario_cep)
-    pyautogui.click(783,471, duration = 1)
+    # Click com o pc do SENAI
+    pyautogui.click(798,444, duration = 1)
+    
+    # Clickcom o pc do trabalho
+    # pyautogui.click(783,471, duration = 1) 
     pyautogui.hotkey('ctrl', 'v')
 
     # Rua
@@ -93,13 +102,29 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     # Cargo
     funcionario_cargo = linha[11].value
     if funcionario_cargo == 'Gerente':         # Verifica o que está escrito na célula e compara com as condições para clicar na opção correta
-        pyautogui.click(697,463, duration = 1)
+        # Click com o pc do SENAI
+        pyautogui.click(675,442, duration = 1)
+    
+        # Clickcom o pc do trabalho
+        # pyautogui.click(697,463, duration = 1)
     elif funcionario_cargo == 'Supervisor':
-        pyautogui.click(696,503, duration = 1)
+        # Click com o pc do SENAI
+        pyautogui.click(673,483, duration = 1)
+    
+        # Clickcom o pc do trabalho
+        # pyautogui.click(696,503, duration = 1)
     elif funcionario_cargo == 'Repositor':
-        pyautogui.click(695,545, duration = 1)
+        # Click com o pc do SENAI
+        pyautogui.click(671,521, duration = 1)
+    
+        # Clickcom o pc do trabalho
+        # pyautogui.click(695,545, duration = 1)
     else:
-        pyautogui.click(694,583, duration = 1)
+        # Click com o pc do SENAI
+        pyautogui.click(671,562, duration = 1)
+    
+        # Clickcom o pc do trabalho
+        # pyautogui.click(694,583, duration = 1)
         
     # Salário
     funcionario_salario = linha[12].value
@@ -114,9 +139,16 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     time.sleep(2)
 
     # Enviara outra resposta
-    pyautogui.click(741,273, duration = 1)
+    # Click com o pc do SENAI
+    pyautogui.click(718,247, duration = 1)
+    
+    # Clickcom o pc do trabalho
+    # pyautogui.click(741,273, duration = 1)
     time.sleep(2)
 
 # Limpando a tabela após realizar todos os cadastros
 pagina.delete_rows(2, 100)  # Encontrar uma forma de automatizar a identificação da última linha da tabela, para que seja tudo deletado automaticamente a partir da primeira linha com dados na tabela (2), até a última linha com dados preenchidos
 planilha.save('Funcionarios.xlsx')
+
+
+# Realizar refino no código

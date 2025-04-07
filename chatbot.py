@@ -1,6 +1,5 @@
-import time
-import random
-import openpyxl 
+import time         # Biblioteca para configurar tempos de espera para a aplicação
+import openpyxl     # Biblioteca para realizar ações com excel dentro do programa
 
 print('Bem vindo ao Suporte da Maculados LTDA. Eu serei sua assistente virtual, estou pronta para te ajudar!')
 print('Digite o número correspondente ao atendimento que deseja: ')
@@ -73,66 +72,66 @@ elif atendimento == 2:
 
             # Realizar a alteração de todos os campos de dados básicos do funcionário
             if editar == 1:
-                edicao_nome = input('Insira o nome do funcionário: ')
+                edicao_nome = input('Insira o Nome do funcionário: ')
                 time.sleep(0.5)
-                edicao_cpf = input('Insira o nome do funcionário: ')
+                edicao_cpf = input('Insira o CPF do funcionário: ')
                 time.sleep(0.5)
-                edicao_email = input('Insira o nome do funcionário: ')
+                edicao_email = input('Insira o E-mail do funcionário: ')
                 time.sleep(0.5)
-                edicao_telefone = input('Insira o nome do funcionário: ')
+                edicao_telefone = input('Insira o Número do Telefone do funcionário: ')
                 time.sleep(0.5)
 
                 # Insere os dados na planilha
-                rows[0] = edicao_nome
-                rows[1] = edicao_cpf
-                rows[2] = edicao_email
-                rows[3] = edicao_telefone
+                rows[0].value = edicao_nome
+                rows[1].value = edicao_cpf
+                rows[2].value = edicao_email
+                rows[3].value = edicao_telefone
                 planilha.save('Funcionarios.xlsx') # Salva a planilha com os dados atualizados
 
-                print(f'Dados básicos do funcionário alterados com sucesso!')
+                print(f'Dados básicos do funcionário {rows[0].value} alterados com sucesso!')
 
             # Realizar a alteração de todos os campos de endereço do funcionário
             elif editar == 2:
-                edicao_cep = input('Insira o nome do funcionário: ')
+                edicao_cep = input('Insira o CEP do endereço do funcionário: ')
                 time.sleep(0.5)
-                edicao_rua = input('Insira o nome do funcionário: ')
+                edicao_rua = input('Insira a Rua do endereço funcionário: ')
                 time.sleep(0.5)
-                edicao_numero = input('Insira o nome do funcionário: ')
+                edicao_numero = input('Insira o Número do endereço do funcionário: ')
                 time.sleep(0.5)
-                edicao_complemento = input('Insira o nome do funcionário: ')
+                edicao_complemento = input('Insira o Complemento do endereço do funcionário: ')
                 time.sleep(0.5)
-                edicao_bairro = input('Insira o nome do funcionário: ')
+                edicao_bairro = input('Insira o Bairro do endereço do funcionário: ')
                 time.sleep(0.5)
-                edicao_cidade = input('Insira o nome do funcionário: ')
+                edicao_cidade = input('Insira a Cidade do endereço do funcionário: ')
                 time.sleep(0.5)
-                edicao_estado = input('Insira o nome do funcionário: ')
+                edicao_estado = input('Insira o Estado do endereço do funcionário: ')
                 time.sleep(0.5)
 
                 # Insere os dados na planilha
-                rows[4] = edicao_cep
-                rows[5] = edicao_rua
-                rows[6] = edicao_numero
-                rows[7] = edicao_complemento
-                rows[8] = edicao_bairro
-                rows[9] = edicao_cidade
-                rows[10] = edicao_estado
+                rows[4].value = edicao_cep
+                rows[5].value = edicao_rua
+                rows[6].value = edicao_numero
+                rows[7].value = edicao_complemento
+                rows[8].value = edicao_bairro
+                rows[9].value = edicao_cidade
+                rows[10].value = edicao_estado
                 planilha.save('Funcionarios.xlsx') # Salva a planilha com os dados atualizados
 
-                print(f'Dados de endereço do funcionário alterados com sucesso!')
+                print(f'Dados de endereço do funcionário {rows[0].value} alterados com sucesso!')
 
             # Realizar a alteração de todos os campos de função do funcionário
             else:                    
-                edicao_cargo = input('Insira o nome do funcionário: ')
+                edicao_cargo = input('Insira o Cargo do funcionário: ')
                 time.sleep(0.5)
-                edicao_salario = input('Insira o nome do funcionário: ')
+                edicao_salario = input('Insira o Salário do funcionário: ')
                 time.sleep(0.5)
 
                 # Insere os dados na planilha
-                rows[11] = edicao_cargo
-                rows[12] = edicao_salario
+                rows[11].value = edicao_cargo
+                rows[12].value = edicao_salario
                 planilha.save('Funcionarios.xlsx') # Salva a planilha com os dados atualizados
 
-                print(f'Dados de função do funcionário alterados com sucesso!')
+                print(f'Dados de função do funcionário {rows[0].value} alterados com sucesso!')
             
         else:
             print('CPF Inválido')
@@ -142,27 +141,4 @@ else :
     print('Agradecemos pelo seu contato. Tenha um ótimo dia!')
 
 
-
-
-
-
-# nome = input("Olá, qual é o seu nome? ")
-
-# time.sleep(2)
-# print("Olá " + nome)
-
-# feeling = input("Como está se sentindo hoje? ")
-
-# time.sleep(2)
-# if "Bem" in feeling:
-#     print("Eu também estou bem :) ")
-# else:
-#     print("Sinto muito :( ")
-
-# time.sleep(2)
-# cor = input("Qual é sua cor favorita? ")
-
-# colours = ["Vermelho", "Verde", "Azul", "Amarelo", "Rosa", "Roxo", "Preto", "Branco"]
-
-# time.sleep(2)
-# print("Minha cor favorita é: " + random.choice(colours))
+# Realizar refino no código
