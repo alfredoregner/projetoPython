@@ -6,12 +6,6 @@ import pyperclip    # Biblioteca para identificar caractere especiais nos campos
 # Formulário para cadastro dos funcionários, simulando a utilização de um sistema
 # https://docs.google.com/forms/d/e/1FAIpQLSduehX0b4pdnbk1PBPxqWrynw4ADLntbk9uadJ-FMBPR3qPhg/viewform
 
-# Para que seja possível coletar a informação da posição do ponteiro do mouse siga o passo a passo
-# 1. Abrir o CMD
-# 2. Digite o comando python
-# 3. Digite o comando from mouseinfo import mouseInfo
-# 4. Digite o comando mouseInfo()
-
 # Declaração de abertura do documento e planilha correta do sistema
 planilha = openpyxl.load_workbook('Funcionarios.xlsx')
 pagina = planilha['Funcionarios']
@@ -23,7 +17,7 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     pyperclip.copy(funcionario_nome)        # Copia a informação do campo selecionado, com a formatação original
 
     # Click com o pc do SENAI
-    pyautogui.click(770,431, duration = 1)
+    pyautogui.click(666,431, duration = 1)
     
     # Clickcom o pc do trabalho
     # pyautogui.click(735,444, duration = 1)  # Clica no local indicado pelas coordenadas
@@ -56,7 +50,7 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     funcionario_cep = linha[4].value
     pyperclip.copy(funcionario_cep)
     # Click com o pc do SENAI
-    pyautogui.click(798,444, duration = 1)
+    pyautogui.click(658,445, duration = 1)
     
     # Clickcom o pc do trabalho
     # pyautogui.click(783,471, duration = 1) 
@@ -109,25 +103,25 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
     funcionario_cargo = linha[11].value
     if funcionario_cargo == 'Gerente':         # Verifica o que está escrito na célula e compara com as condições para clicar na opção correta
         # Click com o pc do SENAI
-        pyautogui.click(675,442, duration = 1)
+        pyautogui.click(676,445, duration = 1)
     
         # Clickcom o pc do trabalho
         # pyautogui.click(697,463, duration = 1)
     elif funcionario_cargo == 'Supervisor':
         # Click com o pc do SENAI
-        pyautogui.click(673,483, duration = 1)
+        pyautogui.click(676,479, duration = 1)
     
         # Clickcom o pc do trabalho
         # pyautogui.click(696,503, duration = 1)
     elif funcionario_cargo == 'Repositor':
         # Click com o pc do SENAI
-        pyautogui.click(671,521, duration = 1)
+        pyautogui.click(678,519, duration = 1)
     
         # Clickcom o pc do trabalho
         # pyautogui.click(695,545, duration = 1)
     else:
         # Click com o pc do SENAI
-        pyautogui.click(671,562, duration = 1)
+        pyautogui.click(675,563, duration = 1)
     
         # Clickcom o pc do trabalho
         # pyautogui.click(694,583, duration = 1)
@@ -146,7 +140,7 @@ for linha in pagina.iter_rows(min_row = 2):     # Coleta a informação a partir
 
     # Enviara outra resposta
     # Click com o pc do SENAI
-    pyautogui.click(718,247, duration = 1)
+    pyautogui.click(717,246, duration = 1)
     
     # Clickcom o pc do trabalho
     # pyautogui.click(741,273, duration = 1)
